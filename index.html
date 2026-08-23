@@ -51,7 +51,6 @@
             margin: 0;
             font-size: 14px;
         }
-        /* شريط التوصيل المجاني المميز */
         .free-shipping-banner {
             background: linear-gradient(135deg, #c5a059, #d4af37);
             color: #121212;
@@ -145,6 +144,43 @@
             background-color: #c5a059;
             color: #121212;
         }
+        /* قسم التواصل السفلي (Footer) */
+        footer {
+            background-color: #1a1a1a;
+            border-top: 2px solid #333;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer h3 {
+            color: #c5a059;
+            margin-bottom: 10px;
+        }
+        footer p {
+            color: #bbb;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .contact-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-link {
+            color: #c5a059;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #c5a059;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .contact-link:hover {
+            background-color: #c5a059;
+            color: #121212;
+        }
     </style>
 </head>
 <body>
@@ -153,7 +189,6 @@
         <img src="logo.jpg.jpeg" alt="Logo" class="logo-img" onerror="this.src='10.jpeg.jpeg'">
         <h1>IRISALIA</h1>
         <p>Scents of Elegance - عطور الفخامة والتميز</p>
-        <!-- إضافة التوصيل المجاني في كل مكان -->
         <div class="free-shipping-banner">🚚 Livraison Gratuite Partout - توصيل مجاني في كل مكان</div>
     </header>
 
@@ -243,6 +278,18 @@
             <button class="btn" onclick="addToCart('إريزيليا - الإصدار التاسع الملكي', 40)">أضف إلى السلة</button>
         </div>
     </div>
+
+    <!-- قسم التواصل ومعلومات المتجر -->
+    <footer>
+        <h3>تواصل معنا - IRISALIA</h3>
+        <p>📧 البريد الإلكتروني: contact.irisalia@gmail.com</p>
+        <p>📞 الهاتف / واتساب:+212 684-354525</p>
+        <div class="contact-links">
+            <a href="https://wa.me/212684354525?text=مرحباً، أنا قادم من متجر IRISALIA وأريد الاستفسار عن العطور." target="_blank" class="contact-link">💬 تواصل عبر الواتساب</a>
+            <a href="mailto:contact.irisalia@gmail.com?subject=استفسار من متجر IRISALIA" class="contact-link">✉️ مراسلة عبر البريد</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px; color: #666;">© 2026 IRISALIA - جميع الحقوق محفوظة</p>
+    </footer>
 
     <script>
         function addToCart(productName, price) {
