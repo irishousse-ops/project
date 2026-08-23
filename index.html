@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRISALIA | Scents of Elegance</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; transform: scale(1.02); }
+            100% { opacity: 0.8; }
+        }
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #c5a059;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #c5a059;
+            background-color: #222;
+        }
+        header h1 {
+            color: #c5a059;
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+        header p {
+            color: #aaa;
+            margin: 0;
+            font-size: 14px;
+        }
+        /* شريط التوصيل المجاني المميز */
+        .free-shipping-banner {
+            background: linear-gradient(135deg, #c5a059, #d4af37);
+            color: #121212;
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 20px;
+            margin-top: 5px;
+            box-shadow: 0 3px 10px rgba(197, 160, 89, 0.3);
+            animation: pulse 2s infinite ease-in-out;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #c5a059;
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .card:hover img {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            color: #fff;
+            margin: 15px 0 5px 0;
+            font-size: 18px;
+        }
+        .card p {
+            color: #888;
+            font-size: 13px;
+            margin: 0 0 15px 0;
+        }
+        .price {
+            color: #c5a059;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .btn {
+            background-color: #c5a059;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #d4af37;
+            transform: scale(1.05);
+        }
+        .cart-bar {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .cart-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 25px;
+            border: 1px solid #c5a059;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cart-btn:hover {
+            background-color: #c5a059;
+            color: #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg.jpeg" alt="Logo" class="logo-img" onerror="this.src='10.jpeg.jpeg'">
+        <h1>IRISALIA</h1>
+        <p>Scents of Elegance - عطور الفخامة والتميز</p>
+        <!-- إضافة التوصيل المجاني في كل مكان -->
+        <div class="free-shipping-banner">🚚 Livraison Gratuite Partout - توصيل مجاني في كل مكان</div>
+    </header>
+
+    <div class="cart-bar">
+        <a href="cart.html" class="cart-btn">🛒 عرض سلة الشراء</a>
+    </div>
+
+    <div class="container">
+        <!-- عطر 1 -->
+        <div class="card">
+            <img src="1.jpeg.jpeg" alt="Royal Oud">
+            <h3>عطر رويال أود (Royal Oud)</h3>
+            <p>الحجم: 100ml | نفحات عطور شرقية أصيلة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('عطر رويال أود (Royal Oud)', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 2 -->
+        <div class="card">
+            <img src="2.jpeg.jpeg" alt="Belle Femme">
+            <h3>عطر بيل فام (Belle Femme)</h3>
+            <p>الحجم: 90ml | أنوثة طاغية وعطر ساحر</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('عطر بيل فام (Belle Femme)', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 3 -->
+        <div class="card">
+            <img src="3.jpeg.jpeg" alt="Nile Incense">
+            <h3>عطر نايل إنسينس (Nile Incense)</h3>
+            <p>الحجم: 100ml | تركيبة ملكية دافئة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('عطر نايل إنسينس (Nile Incense)', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 4 -->
+        <div class="card">
+            <img src="4.jpeg.jpeg" alt="Perfume 4">
+            <h3>إريزيليا - الإصدار الرابع</h3>
+            <p>الحجم: 100ml | جاذبية فريدة وأناقة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('إريزيليا - الإصدار الرابع', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 5 -->
+        <div class="card">
+            <img src="5.jpeg.jpeg" alt="Perfume 5">
+            <h3>إريزيليا - الإصدار الخامس</h3>
+            <p>الحجم: 100ml | مزيج راقٍ ينبض بالفخامة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('إريزيليا - الإصدار الخامس', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 6 -->
+        <div class="card">
+            <img src="6.jpeg.jpeg" alt="Perfume 6">
+            <h3>إريزيليا - الإصدار السادس</h3>
+            <p>الحجم: 100ml | عطر الأساطير الحصرية</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('إريزيليا - الإصدار السادس', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 7 -->
+        <div class="card">
+            <img src="7.jpeg.jpeg" alt="Perfume 7">
+            <h3>إريزيليا - الإصدار السابع</h3>
+            <p>الحجم: 100ml | ذكريات عطرية دافئة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('إريزيليا - الإصدار السابع', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 8 -->
+        <div class="card">
+            <img src="8.jpeg.jpeg" alt="Perfume 8">
+            <h3>إريزيليا - الإصدار الثامن</h3>
+            <p>الحجم: 100ml | إشراقة زهرية مفعمة بالحياة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('إريزيليا - الإصدار الثامن', 40)">أضف إلى السلة</button>
+        </div>
+
+        <!-- عطر 9 -->
+        <div class="card">
+            <img src="9.jpeg.jpeg" alt="Perfume 9">
+            <h3>إريزيليا - الإصدار التاسع الملكي</h3>
+            <p>الحجم: 100ml | تجربة استثنائية فاخرة</p>
+            <div class="price">40 درهم</div>
+            <button class="btn" onclick="addToCart('إريزيليا - الإصدار التاسع الملكي', 40)">أضف إلى السلة</button>
+        </div>
+    </div>
+
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('تمت إضافة ' + productName + ' إلى السلة بنجاح! 🛍️');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+# ==========================================
+# مشروع Irisalia للعطور الفاخرة - نظام الإدارة
+# ==========================================
+
+class IrisaliaStore:
+    def __init__(self):
+        self.name = "IRISALIA - Luxury Fragrances"
+        self.catalog = {
+            1: {"name": "عطر رويال أود (Royal Oud)", "price": 40, "size": "100ml"},
+            2: {"name": "عطر بيل فام (Belle Femme)", "price": 40, "size": "90ml"},
+            3: {"name": "عطر نايل إنسينس (Nile Incense)", "price": 40, "size": "100ml"}
+        }
+
+    def welcome_message(self):
+        print("-" * 50)
+        print(f" مرحباً بك في نظام متجر {self.name} ")
+        print("-" * 50)
+
+    def show_catalog(self):
+        print("\n[ قائمة العطور المتاحة حالياً ]")
+        print("-" * 40)
+        for key, item in self.catalog.items():
+            print(f"{key}. {item['name']} | الحجم : {item['size']} | السعر : {item['price']} درهم")
+        print("-" * 40)
+
+    def process_order(self):
+        self.welcome_message()
+        self.show_catalog()
+        
+        try:
+            choice = int(input("\nاختر رقم العطر الذي ترغب بطلبه (1، 2 أو 3): "))
+            if choice in self.catalog:
+                selected_perfume = self.catalog[choice]
+                quantity = int(input(f"كم عدد القطع المطلوبة من {selected_perfume['name']}؟: "))
+                
+                total_price = selected_perfume['price'] * quantity
+                
+                print("\n" + "=" * 40)
+                print(" ( Irisalie ) فاتورة الطلب المؤقتة ")
+                print("=" * 40)
+                print(f"المنتج : {selected_perfume['name']}")
+                print(f"الكمية : {quantity}")
+                print(f"المجموع الكلي : {total_price} درهم")
+                print(".سيتم التواصل معك عبر السوشيال ميديا لتأكيد الشحن! شكراً لاختيارك Irisalie")
+                print("=" * 40)
+            else:
+                print(".خطأ: الاختيار غير صحيح. يرجى إعادة التشغيل واختيار رقم من القائمة")
+        except ValueError:
+            print(".خطأ: يرجى إدخال أرقام صحيحة فقط")
+
+# تشغيل النظام
+if __name__ == "__main__":
+    store = IrisaliaStore()
+    store.process_order()
